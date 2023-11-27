@@ -1,0 +1,8 @@
+feedparser==5.2.1
+beautifulsoup4==4.9.3
+selenium==3.141.0
+webdriver-manager==3.4.2
+youtube-dl==2021.6.6
+youtube-search-python==1.4.3
+pytube==10.9.2
+moviepy==1.0.3

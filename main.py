@@ -34,19 +34,17 @@ det=str(paragraphs[1])
 details.append(det.split("<b>"))
 tracks=str(paragraphs[2]).split("\n")
 dets=details[0]
-nodets=dets
+nodets=list(dets[1].split("<br>"))[0]
 new=[]
-
-for i in dets:
-    nodets.pop(dets.index((i)))
-    x=i.split("\n")
-    new.append(x)
-aname=new[1][0][:-5]
+valli=nodets.split('\n')
+aname=valli[0][:-5]
 print(aname)
+#print(aname)
 
 tracks.pop(0)
 newtracks=[]
 for i in tracks:
+    #break
     newtracks.append(i[:-5])
 x=newtracks[-1].split('"')[0]
 url=f"{x}"

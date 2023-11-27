@@ -11,6 +11,14 @@ from test import download_audio,search_youtube
 from datetime import datetime
 
 # Setup webdriver
+now = datetime.now()
+import os
+
+# Specify the name of the directory to be created
+directory = str(now.strftime("%d %b %y"))
+if not os.path.exists(directory):
+    os.mkdir(directory)
+
 s=Service(ChromeDriverManager().install())
 options = Options()
 options.add_argument("--blink-settings=imagesEnabled=false")  # Disable images
@@ -82,11 +90,16 @@ for i in newtracks[:-3]:
     if match>80:
         print(f"Success, Energy={match}")
         query=f"{aname} - {i}"
-        with open(f'{datetime.today()}/songs.txt', 'w') as file:
-            file.write(f"{query} link: {a}\n")
+        print(query)
+        file=open(f'{directory}/songs.txt', 'w')
+        file.write(f"{query} link: {a}\n")
+        file.close()
         vidurl=search_youtube(query)
+        print(vidurl)
         if vidurl!="No results found.":
-            download_audio(str(vidurl),f'{datetime.today()}/{query}')
+            download_audio(str(vidurl),f'{directory}\{query}')
+        else:
+            print("Video not found :(")
     else:
         print(f"Failed test, Energy={match}")
 

@@ -65,6 +65,9 @@ for i in newtracks[:-3]:
     soup = BeautifulSoup(html_content, 'html.parser')
     site = str(soup.find(class_='song-image search-image'))
     #print(site)
+    if site.split('"')[5]==IndexError:
+        print("not found")
+        continue
     match = site.split('"')[5]
     #print(match)
     newlink="https://musicstax.com" + match

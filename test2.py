@@ -4,7 +4,8 @@ from bs4 import BeautifulSoup
 from selenium import webdriver
 import requests
 from selenium.webdriver.common.by import By
-from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.common.action_chains import ActionChains
+
 
 # Get the RSS feed data
 #rss_url = "https://newalbumreleases.net/feed/"
@@ -63,9 +64,9 @@ for i in newtracks[:-3]:
     driver = webdriver.Chrome()
     driver.get(f"https://musicstax.com/search?q={aname}+{link}")
     driver.implicitly_wait(10)
-    attr = driver.find_element(By.CSS_SELECTOR, '[data-cy="song-image"]')
-    #print("Button Text:", attr.text)
-    attr.click()
+    button = driver.find_element(By.CSS_SELECTOR, 'a[data-cy="song-image"].song-image.search-image')
+    # Scroll into view
+    driver.execute_script("arguments[0].click();", button)
     driver.implicitly_wait(15)
     html_content = driver.page_source
     soup = BeautifulSoup(html_content, 'html.parser')

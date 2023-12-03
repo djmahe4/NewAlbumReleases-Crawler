@@ -10,3 +10,4 @@ python-dateutil==2.8.2
 aiofiles==2.3.0
 youtube-dl==2023.10.4
 async_timeout==4.0.2
+youtubesearchpython==3.2.0

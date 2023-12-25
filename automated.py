@@ -30,7 +30,7 @@ async def process_track(aname, y, match,directory,a):
 async def main():
     now = datetime.now()
     #today=input("Enter date (yyyy-mm-dd):")
-    today=datetime.today()
+    today=datetime.today().date()
     #directory = input("Enter date (dd me yy):")
     directory=now.strftime("%d %b %y").upper()
     links=[]

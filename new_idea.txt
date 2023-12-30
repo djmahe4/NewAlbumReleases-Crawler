@@ -1,0 +1,3 @@
+I want to add cover photo to the song and artist name as well
+
+also I wanted to integrate it with my twitter API to provide song suggestion with graphical radar chart data as well

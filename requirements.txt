@@ -6,4 +6,4 @@ beautifulsoup4==4.9.3
 regex==2021.4.4
 pytube==10.9.2
 moviepy==1.0.3
-youtubesearchpython==1.4.1
+youtubesearchpython==1.6.6

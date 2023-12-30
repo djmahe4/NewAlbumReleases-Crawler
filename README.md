@@ -6,6 +6,7 @@ Run ```pkg update && pkg upgrade```
 
 ```pkg install python -y```
 ```pkg install python-numpy python-pillow```
+```pkg install ffmpeg```
 
 If you’re on a Linux system, you can install CMake directly from the terminal. Here are the commands for different distributions:
 

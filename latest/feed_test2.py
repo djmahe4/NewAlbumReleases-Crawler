@@ -143,8 +143,12 @@ def page_view2(url):
             drive= ChromiumPage(options)
             drive.listen.start()
             drive.get(url)
-            time.sleep(0) #orginally set to 10
+            i = drive.get_frame('@src^https://challenges.cloudflare.com/cdn-cgi')
+            if i:
+                e = i('.mark')
+                e.click()
             htmls = drive.html
+            time.sleep(10)  # orginally set to 10
             #print(htmls)
             #return
             parsed= feedparser.parse(htmls)
@@ -155,10 +159,6 @@ def page_view2(url):
                 #print(rss_content)
             #else:
                 #print("None")
-            i = drive.get_frame('@src^https://challenges.cloudflare.com/cdn-cgi')
-            if i:
-                e = i('.mark')
-                e.click()
             #time.sleep(10)
             #resp = driver.listen.wait()
             #rss_content = resp.response.body

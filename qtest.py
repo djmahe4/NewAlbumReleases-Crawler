@@ -9,9 +9,9 @@ from debug import get_song_details
 import os
 import time
 
-TOKEN: final = "6799916535:AAEtjCd4rToQyVjyFSwSHDX9NNAhbNs9fu8"
-BOT_USERNAME: final = "@djmahe4music_bot"
-WATERMARK: final ="➖@youtubemusicdownloader"
+TOKEN: final = ""#Token of your bot using botfather
+BOT_USERNAME: final = ""#Username of your bot using botfather
+WATERMARK: final ="@djmahe04"
 folder_name = input("Enter folder:")
 async def start_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     global folder_name

@@ -14,7 +14,7 @@ import os
 from feed_test2 import new_feed_input,page_view,page_view2
 from defn import search_youtube, download_audio, song_details
 from my_telegram import format_and_print_artist_info
-spotdl = Spotdl(client_id='16a580bdff3b4b6f822804fb6372712c', client_secret='7b7b8f6350bb452a880cf2a2adab3187')
+spotdl = Spotdl(client_id='', client_secret='')
 check={}
 async def process_track(aname, y, match,directory,track_url,dance,tgram):
     if match >= 34 or dance>=34:
